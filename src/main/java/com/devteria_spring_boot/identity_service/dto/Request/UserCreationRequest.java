@@ -1,12 +1,24 @@
 package com.devteria_spring_boot.identity_service.dto.Request;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class UserCreationRequest {
+
+    @Size(min = 3, message = "Username must be at least 3 characters")
     private String username;
+
+    @Size(min = 8, message = "Password must be at least 8 characters")
     private String password;
+
+//    @Email, @NotNull, ...
+//    Custom validation annotation
+
     private String firstName;
     private String lastName;
+
+
     private LocalDate dob;
 
     public String getUsername() {

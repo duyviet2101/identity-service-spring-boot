@@ -1,5 +1,6 @@
 package com.devteria_spring_boot.identity_service.controller;
 
+import com.devteria_spring_boot.identity_service.dto.Request.ApiResponse;
 import com.devteria_spring_boot.identity_service.dto.Request.UserCreationRequest;
 import com.devteria_spring_boot.identity_service.dto.Request.UserUpdateRequest;
 import com.devteria_spring_boot.identity_service.entity.User;
@@ -20,8 +21,12 @@ public class UserController {
     }
 
     @PostMapping
-    User createUser(@RequestBody @Valid UserCreationRequest request) {
-        return userService.createUser(request);
+    ApiResponse<User> createUser(@RequestBody @Valid UserCreationRequest request) {
+        ApiResponse<User> apiResponse = new ApiResponse<>();
+
+        apiResponse.setResult(userService.createUser(request));
+
+        return apiResponse;
     }
 
     @GetMapping

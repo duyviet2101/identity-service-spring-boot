@@ -1,4 +1,4 @@
-package com.devteria_spring_boot.identity_service.dto.Request;
+package com.devteria_spring_boot.identity_service.dto.request;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

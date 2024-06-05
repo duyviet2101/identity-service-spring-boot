@@ -1,4 +1,4 @@
-package com.devteria_spring_boot.identity_service.dto.Request;
+package com.devteria_spring_boot.identity_service.dto.request;
 
 import jakarta.validation.constraints.Size;
 import lombok.*;

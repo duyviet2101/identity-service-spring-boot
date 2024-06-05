@@ -25,6 +25,12 @@ public class UserService {
         if (userRepository.existsByUsername(request.getUsername())) {
             throw new AppException(ErrorCode.USER_EXISTED);
         }
+//! Builder annotation lombok
+//        UserCreationRequest request1 = UserCreationRequest.builder()
+//                .username("")
+//                .firstName("")
+//
+//                .build();
 
         user.setUsername(request.getUsername());
         user.setPassword(request.getPassword());
